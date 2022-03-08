@@ -1,11 +1,16 @@
-Los scripts de la base de datos y los jsons de Postman se encuentran en la carpeta Doc.
+*Los scripts de la base de datos y los jsons de Postman se encuentran en la carpeta Doc.
 
 Requisitos:
 
-1. Instalar MySQL Server 8.0
-2. Correr el script db_script.sql para crear la base de datos ticket_db y la tabla ticket
-3. Correr el script user_script.sql para crear el usuario con los permisos suficientes para realizar consultas desde .Net con Mysql
-4. Configurar el string connection en el appsettings.json:
+1. .Net Framework Runtime 5.0
+2. MySQL Server 8.0
+3. Docker
+
+Pasos para Windows:
+
+1. Correr el script db_script.sql para crear la base de datos ticket_db y la tabla ticket
+2. Correr el script user_script.sql para crear el usuario con los permisos suficientes para realizar consultas desde .Net con Mysql
+3. En el appsettings.json de la solucion configurar el string connection:
 	server=192.168.1.8;port=3306;user=monty2;password=some_pass;database=ticket_db;Convert Zero Datetime=True
 	
 	*En el parametro server debe ir la IPV4 del host.
