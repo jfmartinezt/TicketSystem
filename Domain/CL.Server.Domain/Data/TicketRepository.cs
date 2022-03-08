@@ -81,7 +81,7 @@ namespace CL.Domain.Ticket.Data
       context.Ticket.Add(ticketEntity);
       context.SaveChanges();
 
-      return ticket.Id;
+      return ticketEntity.idTicket;
     }
 
     internal void Update(TicketData ticket)
