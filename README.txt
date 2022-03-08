@@ -16,7 +16,7 @@ Requisitos:
 docker build -t dockerfile .
 docker run -dp 7831:80 dockerfile
 
-**El puerto 7831 del contenedor puede cambiarse, y en caso de hacerlo se debe ajustar la url del Postman eviroment para que apunte al nuevo puerto.
+**El puerto 7831 del contenedor puede cambiarse, y en caso de hacerlo se debe ajustar el campo url del Postman enviroment para que apunte al nuevo puerto.
 
 **El CRUD queda documentado en la Postman collection TicketSystem API
 
