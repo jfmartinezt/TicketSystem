@@ -1,3 +1,6 @@
+Tecnologias y medologias aplicadas: C# .Net Core Api REST, SOLID, MySQL, Entity Framework, Docker, Repository Pattern, Middleware Exception Handling, file logging.
+
+
 *Los scripts de la base de datos y los jsons de Postman se encuentran en la carpeta Doc.
 
 Requisitos:
@@ -23,7 +26,7 @@ docker run -dp 7831:80 dockerfile
 
 **El puerto 7831 del contenedor puede cambiarse, y en caso de hacerlo se debe ajustar el campo url del Postman enviroment para que apunte al nuevo puerto.
 
-**El CRUD queda documentado en la Postman collection TicketSystem API
+**El CRUD queda documentado en la Postman collection TicketSystem API. La request Get tickets contiene una descripcion de cada uno de los campos que aplica para todas las request.
 
 
 

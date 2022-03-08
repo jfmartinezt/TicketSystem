@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Servidor.Web.Middleware;
 
 namespace Server.Web
 {
@@ -35,8 +36,9 @@ namespace Server.Web
       {
         app.UseDeveloperExceptionPage();
       }
+      app.UseMiddleware<ExceptionMiddleware>();
 
-      app.UseHttpsRedirection();
+      //app.UseHttpsRedirection();
 
       app.UseRouting();
 

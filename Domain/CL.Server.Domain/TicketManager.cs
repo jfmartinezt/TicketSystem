@@ -1,5 +1,6 @@
 ﻿using CL.Domain.Ticket.Data;
 using CL.Server.Middleware.Contracts.Ticket;
+using CL.Server.Middleware.Error;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -43,12 +44,12 @@ namespace CL.Server.Domain
     {
       if (fromCreation.HasValue && toCreation.HasValue && fromCreation.Value > toCreation.Value)
       {
-        throw new Exception("Invalid creation time range");
+        throw new CustomException("Invalid creation time range");
       }
 
       if (fromModification.HasValue && toModification.HasValue && fromModification.Value > toModification.Value)
       {
-        throw new Exception("Invalid modification time range");
+        throw new CustomException("Invalid modification time range");
       }
 
       return ticketRepository.GetAll(id, user, status, fromCreation, toCreation, fromModification, toModification, amountPerPage, page);
@@ -73,17 +74,17 @@ namespace CL.Server.Domain
     {
       if (string.IsNullOrEmpty(ticket.User))
       {
-        throw new Exception("User can not be empty.");
+        throw new CustomException("User can not be empty.");
       }
 
       if (string.IsNullOrEmpty(ticket.Status))
       {
-        throw new Exception("Status can not be empty.");
+        throw new CustomException("Status can not be empty.");
       }
 
       if (!status.Contains(ticket.Status))
       {
-        throw new Exception($"Status {ticket.Status} is not a valid state.");
+        throw new CustomException($"Status {ticket.Status} is not a valid state.");
       }
 
       return ticketRepository.Insert(ticket);
@@ -98,22 +99,22 @@ namespace CL.Server.Domain
       TicketData ticket = GetById(updateData.Id);
       if (ticket == null)
       {
-        throw new Exception($"Ticket with id {updateData.Id} was not found.");
+        throw new CustomException($"Ticket with id {updateData.Id} was not found.");
       }
 
       if (string.IsNullOrEmpty(ticket.User))
       {
-        throw new Exception("User can not be empty.");
+        throw new CustomException("User can not be empty.");
       }
 
       if (string.IsNullOrEmpty(ticket.Status))
       {
-        throw new Exception("Status can not be empty.");
+        throw new CustomException("Status can not be empty.");
       }
 
       if (!status.Contains(ticket.Status))
       {
-        throw new Exception($"Status {ticket.Status} is not a valid state.");
+        throw new CustomException($"Status {ticket.Status} is not a valid state.");
       }
 
       ticketRepository.Update(updateData);
@@ -128,7 +129,7 @@ namespace CL.Server.Domain
       TicketData ticket = GetById(deleteData.Id);
       if (ticket == null)
       {
-        throw new Exception($"Ticket with id {deleteData.Id} was not found.");
+        throw new CustomException($"Ticket with id {deleteData.Id} was not found.");
       }
 
       ticketRepository.Delete(ticket.Id);

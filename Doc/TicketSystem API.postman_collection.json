@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/TicketSystem/tickets-info?amountPerPage=10&page=0&id=0&status=&user&fromCreation&toCreation&fromModification&toModification",
+					"raw": "{{url}}/TicketSystem/tickets-info?amountPerPage=10&page=0&id=&status=&user&fromCreation&toCreation&fromModification&toModification",
 					"host": [
 						"{{url}}"
 					],
@@ -23,47 +23,47 @@
 						{
 							"key": "amountPerPage",
 							"value": "10",
-							"description": "Amount of registers per page"
+							"description": "Amount of registers per page (int)"
 						},
 						{
 							"key": "page",
 							"value": "0",
-							"description": "Current page starting at 0"
+							"description": "Current page starting at 0 (int)"
 						},
 						{
 							"key": "id",
-							"value": "0",
-							"description": "Ticket id"
+							"value": "",
+							"description": "Ticket id (int)"
 						},
 						{
 							"key": "status",
 							"value": "",
-							"description": "Ticket Status"
+							"description": "Ticket Status: OPEN, CLOSED (string)"
 						},
 						{
 							"key": "user",
 							"value": null,
-							"description": "User"
+							"description": "User  (string)"
 						},
 						{
 							"key": "fromCreation",
 							"value": null,
-							"description": "Start date range for creation. ISO8601 format"
+							"description": "Start date range for creation (string)"
 						},
 						{
 							"key": "toCreation",
 							"value": null,
-							"description": "End date range for creation  "
+							"description": "End date range for creation   (string)"
 						},
 						{
 							"key": "fromModification",
 							"value": null,
-							"description": "Start date range for modification  "
+							"description": "Start date range for modification (string)  "
 						},
 						{
 							"key": "toModification",
 							"value": null,
-							"description": "End date range for modification  "
+							"description": "End date range for modification (string)  "
 						}
 					]
 				}
@@ -76,7 +76,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/TicketSystem/ticket-info?id=3",
+					"raw": "{{url}}/TicketSystem/ticket-info?id=0",
 					"host": [
 						"{{url}}"
 					],
@@ -87,7 +87,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "3",
+							"value": "0",
 							"description": "Ticket id"
 						}
 					]
@@ -102,7 +102,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user\": \"user3\",\r\n    \"status\": \"OPEN\"\r\n}",
+					"raw": "{\r\n    \"user\": \"user3\",\r\n    \"status\": \"O1PEN\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
