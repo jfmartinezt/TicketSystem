@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>9ae781fe-fd69-4889-a407-c5748fc160ba</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Domain\**" />
+    <Compile Remove="Middleware\**" />
+    <Content Remove="Domain\**" />
+    <Content Remove="Middleware\**" />
+    <EmbeddedResource Remove="Domain\**" />
+    <EmbeddedResource Remove="Middleware\**" />
+    <None Remove="Domain\**" />
+    <None Remove="Middleware\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Domain\CL.Server.Domain\CL.Server.Domain.csproj" />
+    <ProjectReference Include="Middleware\CL.Server.Middleware\CL.Server.Middleware.csproj" />
+  </ItemGroup>
+
+
+
+
+</Project>
